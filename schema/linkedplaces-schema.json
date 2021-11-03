@@ -36,7 +36,7 @@
                 ],
                 "properties": {
                     "@id": {
-                        "title": "LinkedPasts extended property: '@id'",
+                        "title": "LinkedPlaces extended property: '@id'",
                         "description": "A unique and permanent URI pointing to the contributor's published record of the place.",
                         "type": "string",
                         "pattern": "^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$"
@@ -57,13 +57,28 @@
                         ]
                     },
                     "properties": {
-                        "oneOf": [{
-                                "type": "null"
+                        "title": "LinkedPlaces extends the GeoJSON 'properties' object",
+                        "description": "A properties element holding at least one key:value pair is required by GeoJSON. For Linked Places format, title is required and one or more ccodes are encouraged.",
+                        "type": "object",
+                        "required": [
+                            "title"
+                        ],
+                        "properties": {
+                            "title": {
+                                "title": "LinkedPlaces requires a title string.",
+                                "type": "string",
+                                "pattern": "^.*[^\\s]+.*$"
                             },
-                            {
-                                "type": "object"
+                            "ccode": {
+                                "title": "LinkedPlaces encourages country codes.",
+                                "description": "Assumption: LinkedPlaces expects values from the ISO 3166 Alpha-2, Alpha-3, or three-digit 'numeric' code lists. E.g., 'AF', 'AFG', or '004' for 'Afghanistan'.",
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "pattern": "^([A-Z]{2,3}|\\d{3})$"
+                                }
                             }
-                        ]
+                        }
                     },
                     "geometry": {
                         "oneOf": [{
