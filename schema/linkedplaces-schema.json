@@ -8,6 +8,10 @@
         "type": {
             "type": "string",
             "const": "FeatureCollection"
+        },
+        "@context": {
+            "type": "string",
+            "const": "https://raw.githubusercontent.com/isawnyu/linked-places-format/main/linkedplaces-context-v1.1.jsonld"
         }
     },
     "required": [
