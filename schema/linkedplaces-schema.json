@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/isawnyu/linked-places-format/blob/main/schema/linkedplaces-schema.json",
+    "title": "Linked Places JSON Schema",
+    "description": "A schema for JSON files conforming to the Linked Places specification.",
+    "type": "object",
+    "properties": {},
+    "required": []
+}
