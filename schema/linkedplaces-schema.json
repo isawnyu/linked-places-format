@@ -4,6 +4,13 @@
     "title": "Linked Places JSON Schema",
     "description": "A schema for JSON files conforming to the Linked Places specification.",
     "type": "object",
-    "properties": {},
-    "required": []
+    "properties": {
+        "type": {
+            "type": "string",
+            "const": "FeatureCollection"
+        }
+    },
+    "required": [
+        "type"
+    ]
 }
