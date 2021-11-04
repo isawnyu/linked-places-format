@@ -1,2 +1,5 @@
 jschon==0.7.3
 airtight==0.2.0
+json-lines==0.5.0
+ujson==4.2.0
+jsonschema==4.2.0

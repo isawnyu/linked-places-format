@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/ccodes.json",
+    "title": "ccodes",
+    "description": "Assumption: LinkedPlaces expects values from the ISO 3166 Alpha-2, Alpha-3, or three-digit 'numeric' code lists. E.g., 'AF', 'AFG', or '004' for 'Afghanistan'.",
+    "type": "array",
+    "items": {
+        "$ref": "#/$defs/ccode"
+    },
+    "$defs": {
+        "ccode": {
+            "type": "string",
+            "pattern": "^([A-Z]{2,3}|\\d{3})$"
+        }
+    }
+}
