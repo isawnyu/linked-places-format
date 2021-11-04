@@ -1,0 +1,2 @@
+jschon==0.7.3
+airtight==0.2.0
