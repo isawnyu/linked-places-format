@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/periods.json",
+    "title": "periods",
+    "description": "foo",
+    "type": "array",
+    "items": {
+        "$ref": "#/$defs/period"
+    },
+    "$defs": {
+        "period": {
+            "type": "object",
+            "required": [
+                "name",
+                "@id"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "@id": {
+                    "$ref": "#/$defs/uri"
+                }
+            }
+        },
+        "uri": {
+            "type": "string",
+            "pattern": "^(.+:.+|https?:\\\\.+)$"
+        }
+    }
+}

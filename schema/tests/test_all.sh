@@ -7,6 +7,7 @@ test_data_dir_path="$schema_dir_path/test_data"
 
 declare -a components=(
     "ccodes"
+    "periods"
     "timespans")
 
 for component in ${components[@]}; do
