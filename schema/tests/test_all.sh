@@ -5,7 +5,12 @@ tests_dir_path=$(dirname $script_path)
 schema_dir_path=$(dirname $tests_dir_path)
 test_data_dir_path="$schema_dir_path/test_data"
 
-component='ccodes'
+declare -a components=(
+    "ccodes"
+    "timespans")
 
-echo $component
-jsonschema -o pretty --instance "$test_data_dir_path/$component.json" "$schema_dir_path/$component.json"
+for component in ${components[@]}; do
+    echo $component
+    jsonschema -o pretty --instance "$test_data_dir_path/$component.json" "$schema_dir_path/$component.json"
+done
+
