@@ -22,7 +22,7 @@ def teardown_module():
     pass
 
 
-class Test_CCodes(TestCase):
+class Test_Properties(TestCase):
 
     def setUp(self):
         self.schema_path = Path(
