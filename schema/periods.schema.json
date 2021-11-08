@@ -16,7 +16,8 @@
             ],
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^.*[^\\s]+.*$"
                 },
                 "@id": {
                     "$ref": "#/$defs/uri"
