@@ -54,4 +54,7 @@ class Test_When(TestCase):
         ]
         for v in vals:
             jsonschema.validate(v, self.schema, resolver=self.resolver)
-        #jsonschema.validate(vals, self.schema, resolver=self.resolver)
+
+    @raises(ValidationError)
+    def test_bad(self):
+        jsonschema.validate("this friday", self.schema, resolver=self.resolver)
