@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/integer_year.schema.json",
+    "title": "integer_year",
+    "oneOf": [{
+            "type": "integer",
+            "exclusiveMinimum": 0
+        },
+        {
+            "type": "integer",
+            "exclusiveMaximum": 0
+        }
+    ]
+}
