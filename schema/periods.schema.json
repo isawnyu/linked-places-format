@@ -22,7 +22,8 @@
                 "@id": {
                     "$ref": "#/$defs/uri"
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "uri": {
             "type": "string",
