@@ -11,6 +11,7 @@ from nose.tools import assert_equal, assert_false, assert_true, raises
 from pathlib import Path
 from unittest import TestCase
 
+logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 test_data_path = Path('tests/data').resolve()
 
@@ -48,19 +49,18 @@ class Test_CCodes(TestCase):
 
     def test_good(self):
         code_keys = ['alpha-2', 'alpha-3', 'numeric']
-        good_values = list()
         for k in code_keys:
             test_list = country_codes[k]
-            jsonschema.validate(test_list, self.schema)
+            jsonschema.validate(test_list, self.schema, resolver=self.resolver)
             test_list = [country_codes[k][0], ]
-            jsonschema.validate(test_list, self.schema)
+            jsonschema.validate(test_list, self.schema, resolver=self.resolver)
 
     @ raises(ValidationError)
     def test_bad_list(self):
         test_list = ['', None, 'A', 1, '1', 'banana', '0009']
-        jsonschema.validate(test_list, self.schema)
+        jsonschema.validate(test_list, self.schema, resolver=self.resolver)
 
     @ raises(ValidationError)
     def test_empty_list(self):
         test_list = []
-        jsonschema.validate(test_list, self.schema)
+        jsonschema.validate(test_list, self.schema, resolver=self.resolver)

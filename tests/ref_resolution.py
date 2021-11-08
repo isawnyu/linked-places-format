@@ -3,8 +3,12 @@
 """Local $ref resolution for jsonschema"""
 
 import jsonschema
+import logging
+from pprint import pformat
 import ujson
+
 base_uri = 'https://pleiades.stoa.org/linkedplaces/schema/'
+logger = logging.getLogger(__name__)
 
 
 def get_refs(schema):
@@ -25,15 +29,15 @@ def get_resolver(schema_path, schema):
     refs = get_refs(schema)
     i = len(base_uri)
     refs = [r for r in refs if r[:i] == base_uri]
-    print(refs)
+    logger.debug(f'refs: {pformat(refs)}')
     store = dict()
     for ref in refs:
         fn = ref[i:]
         with open(schema_path.parent / fn, 'r', encoding='utf-8') as fp:
-            s = ujson(fp)
+            s = ujson.load(fp)
         del fp
         store[ref] = s
-    print(store)
+    logger.debug(f'store:\n{pformat(store, indent=4)}')
     resolver = jsonschema.RefResolver(
         base_uri=base_uri,
         referrer=schema,
