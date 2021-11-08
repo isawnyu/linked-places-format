@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema#",
-    "$id": "https://pleiades.stoa.org/linkedplaces/schema/timespans.json",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/timespans.schema.json",
     "title": "timespans",
     "type": "array",
     "minItems": 1,

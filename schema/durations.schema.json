@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema#",
-    "$id": "https://pleiades.stoa.org/linkedplaces/schema/durations.json",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/durations.schema.json",
     "title": "duration",
     "description": "Valid values for 'duration' are strings with the letter 'P' followed by an integer, followed by one of Y, M, W, or D to indicate years, months, weeks, or days. E.g. **P100Y** indicates one century with unspecified bounds within an accompanying timespan.",
     "type": "string",
