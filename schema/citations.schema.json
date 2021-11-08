@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/citations.schema.json",
+    "title": "citations",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "$ref": "#/$defs/citation"
+    },
+    "$defs": {
+        "citation": {
+            "type": "object",
+            "anyOf": [{
+                    "title": "LinkedPlaces required citation attributes",
+                    "required": [
+                        "label",
+                        "year",
+                        "@id"
+                    ]
+                },
+                {
+                    "title": "Pleiades required citation attributes",
+                    "required": [
+                        "pleiades_short_title",
+                        "pleiades_citation_detail",
+                        "pleiades_bibliographic_uri"
+                    ]
+                }
+            ],
+            "properties": {
+                "label": {
+                    "description": "LinkedPlaces citation label",
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_nonempty.schema.json"
+                },
+                "year": {
+                    "description": "LinkedPlaces citation year",
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_year.schema.json"
+                },
+                "@id": {
+                    "description": "LinkedPlaces citation id",
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/uri.schema.json"
+                },
+                "pleiades_short_title": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_nonempty.schema.json"
+                },
+                "pleiades_citation_detail": {
+                    "description": "can be empty if the whole work is being cited",
+                    "type": "string"
+                },
+                "pleiades_bibliographic_uri": {
+                    "$ref": "https: //pleiades.stoa.org/linkedplaces/schema/pleiades_bibliographic_uri.schema.json"
+                }
+            }
+        }
+    }
+}

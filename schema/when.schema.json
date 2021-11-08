@@ -15,7 +15,7 @@
             "$ref": "https://pleiades.stoa.org/linkedplaces/schema/periods.schema.json"
         },
         "label": {
-            "type": "string"
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_nonempty.schema.json"
         },
         "duration": {
             "$ref": "https://pleiades.stoa.org/linkedplaces/schema/durations.schema.json"

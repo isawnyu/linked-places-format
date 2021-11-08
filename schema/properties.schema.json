@@ -9,8 +9,7 @@
     ],
     "properties": {
         "title": {
-            "type": "string",
-            "pattern": "^.*[^\\s]+.*$"
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_nonempty.schema.json"
         },
         "ccodes": {
             "$ref": "https://pleiades.stoa.org/linkedplaces/schema/ccodes.schema.json"

@@ -16,8 +16,7 @@
             ],
             "properties": {
                 "name": {
-                    "type": "string",
-                    "pattern": "^.*[^\\s]+.*$"
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_nonempty.schema.json"
                 },
                 "@id": {
                     "$ref": "#/$defs/uri"
@@ -26,8 +25,7 @@
             "additionalProperties": false
         },
         "uri": {
-            "type": "string",
-            "pattern": "^(.+:.+|https?:\\\\.+)$"
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/uri.schema.json"
         }
     }
 }

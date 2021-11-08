@@ -1,0 +1,6 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/pleiades_bibliographic_uri.schema.json",
+    "type": "string",
+    "pattern": "^https://www.zotero.org/groups/2533/(pleiades/)?items/IJEX4REN$"
+}
