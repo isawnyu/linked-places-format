@@ -13,6 +13,7 @@ cache = dict()
 
 
 def get_refs(base_path, schema, depth=1):
+    """Recursively parse schema to find, load, and cache refs to subordinate schemas from local copies."""
     global cache
     refs = set()
     i = len(base_uri)
@@ -40,6 +41,7 @@ def get_refs(base_path, schema, depth=1):
 
 
 def get_resolver(schema_path, schema):
+    """Get a resolver for jsonschema validation with local copies of subordinate schemas loaded."""
     base_path = schema_path.parent
     refs = get_refs(base_path, schema)
     store = dict()
