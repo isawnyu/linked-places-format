@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/properties.schema.json",
+    "title": "properties",
+    "description": "Linked Places extends the GeoJSON 'Feature.properties' schema. For Linked Places, 'title' is required and one or more 'ccodes' are encouraged.",
+    "type": "object",
+    "required": [
+        "title"
+    ],
+    "properties": {
+        "title": {
+            "type": "string",
+            "pattern": "^.*[^\\s]+.*$"
+        },
+        "ccodes": {
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/ccodes.schema.json"
+        }
+    }
+}
