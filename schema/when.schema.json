@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "@id": "https://pleiades.stoa.org/linkedplaces/schema/when.schema.json",
+    "title": "when",
+    "description": "Linked Places: A 'when' element can be used to temporally scope an entire Feature",
+    "type": "object",
+    "required": [
+        "timespans"
+    ],
+    "properties": {
+        "timespans": {
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/timespans.schema.json"
+        },
+        "periods": {
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/periods.schema.json"
+        },
+        "label": {
+            "type": "string"
+        },
+        "duration": {
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/durations.schema.json"
+        }
+    },
+    "additionalProperties": false
+}
