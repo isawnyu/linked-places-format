@@ -34,7 +34,7 @@
                 },
                 "year": {
                     "description": "LinkedPlaces citation year",
-                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_year.schema.json"
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/integer_year.schema.json"
                 },
                 "@id": {
                     "description": "LinkedPlaces citation id",
