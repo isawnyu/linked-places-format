@@ -3,5 +3,5 @@
     "$id": "https://pleiades.stoa.org/linkedplaces/schema/string_year.schema.json",
     "title": "string_year",
     "type": "string",
-    "pattern": "^-?\\d{4}$"
+    "pattern": "^-?\\d{1,}$"
 }
