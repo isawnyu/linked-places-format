@@ -9,35 +9,47 @@ import ujson
 
 base_uri = 'https://pleiades.stoa.org/linkedplaces/schema/'
 logger = logging.getLogger(__name__)
+cache = dict()
 
 
-def get_refs(schema):
-    refs = list()
+def get_refs(base_path, schema, depth=1):
+    global cache
+    refs = set()
+    i = len(base_uri)
+
     if isinstance(schema, list):
         for item in schema:
-            refs.extend(get_refs(item))
+            refs.update(get_refs(base_path, item, depth=depth + 1))
     elif isinstance(schema, dict):
-        for k, item in schema.items():
+        for k, val in schema.items():
             if k == '$ref':
-                refs.append(item)
+                if val[:i] == base_uri:
+                    refs.add(val)
+                    try:
+                        s = cache[val]
+                    except KeyError:
+                        fn = val[i:]
+                        with open(base_path / fn, 'r', encoding='utf-8') as fp:
+                            s = ujson.load(fp)
+                        del fp
+                        cache[val] = s
+                    refs.update(get_refs(base_path, s, depth=depth + 1))
             else:
-                refs.extend(get_refs(item))
+                refs.update(get_refs(base_path, val, depth=depth + 1))
     return refs
 
 
 def get_resolver(schema_path, schema):
-    refs = get_refs(schema)
-    i = len(base_uri)
-    refs = [r for r in refs if r[:i] == base_uri]
-    logger.debug(f'refs: {pformat(refs)}')
+    base_path = schema_path.parent
+    refs = get_refs(base_path, schema)
     store = dict()
-    for ref in refs:
-        fn = ref[i:]
-        with open(schema_path.parent / fn, 'r', encoding='utf-8') as fp:
-            s = ujson.load(fp)
-        del fp
-        store[ref] = s
-    logger.debug(f'store:\n{pformat(store, indent=4)}')
+    for ref in list(refs):
+        try:
+            s = cache[ref]
+        except KeyError:
+            logger.debug(f'Cache miss: {ref}')
+        else:
+            store[ref] = s
     resolver = jsonschema.RefResolver(
         base_uri=base_uri,
         referrer=schema,
