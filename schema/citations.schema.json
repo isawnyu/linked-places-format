@@ -14,7 +14,6 @@
                     "title": "LinkedPlaces required citation attributes",
                     "required": [
                         "label",
-                        "year",
                         "@id"
                     ]
                 },
@@ -48,7 +47,7 @@
                     "type": "string"
                 },
                 "pleiades_bibliographic_uri": {
-                    "$ref": "https: //pleiades.stoa.org/linkedplaces/schema/pleiades_bibliographic_uri.schema.json"
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/pleiades_bibliographic_uri.schema.json"
                 }
             }
         }
