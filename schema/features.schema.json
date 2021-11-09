@@ -48,21 +48,11 @@
                 "types": {
                     "$ref": "https://pleiades.stoa.org/linkedplaces/schema/types.schema.json"
                 },
-                "geometry": {
-                    "$ref": "https://geojson.org/schema/GeometryCollection.json"
-                },
-                "links": {
-                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/links.schema.json"
-                },
-                "relations": {
-                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/relations.schema.json"
-                },
-                "descriptions": {
-                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/descriptions.schema.json"
-                },
-                "depictions": {
-                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/depictions.schema.json"
-                },
+                "geometry": {},
+                "links": {},
+                "relations": {},
+                "descriptions": {},
+                "depictions": {},
                 "additionalProperties": false
             }
         }
