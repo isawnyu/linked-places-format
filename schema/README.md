@@ -1,0 +1,1 @@
+In this directory are schema files that correspond to the original Grossner/Simon Linked Places Format description, which is used for ingest into the WHG etc. In the "pleiades" subdirectory are schema files for the Pleiades variant of the Linked Pasts Format, which is used for ingest into the Pleiades gazetteer.
