@@ -1,9 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema#",
-    "$id": "https://pleiades.stoa.org/linkedplaces/schema/linkedplaces.schema.json",
-    "title": "Linked Places Format",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/pleiades/linkedplaces.schema.json",
+    "title": "Linked Places Format (Pleiades variant)",
     "type": "object",
     "required": [
+        "variant",
         "type",
         "@context",
         "features"
@@ -11,7 +12,7 @@
     "properties": {
         "variant": {
             "type": "string",
-            "const": "LinkedPlaces"
+            "const": "Pleiades"
         },
         "type": {
             "title": "GeoJSON type = FeatureCollection",
