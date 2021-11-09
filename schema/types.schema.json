@@ -1,0 +1,41 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/types.schema.json",
+    "type": "object",
+    "required": [
+        "identifier",
+        "label"
+    ],
+    "properties": {
+        "identifier": {
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/uri.schema.json"
+        },
+        "label": {
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string-nonempty.schema.json"
+        },
+        "sourceLabels": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "label",
+                    "lang"
+                ],
+                "properties": {
+                    "label": {
+                        "type": "string",
+                        "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string-nonempty.schema.json"
+                    },
+                    "lang": {
+                        "$ref": "https://pleiades.stoa.org/linkedplaces/schema/lang.schema.json"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "when": {
+            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/when.schema.json"
+        }
+    },
+    "additionalProperties": false
+}
