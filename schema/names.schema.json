@@ -1,0 +1,58 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/names.schema.json",
+    "title": "names",
+    "type": "array",
+    "minItems": 1,
+    "prefixItems": [{
+        "$ref": "#/$defs/firstname"
+    }],
+    "items": {
+        "$ref": "#/$defs/name"
+    },
+    "$defs": {
+        "firstname": {
+            "type": "object",
+            "required": [
+                "toponym",
+                "lang",
+                "citations"
+            ],
+            "properties": {
+                "toponym": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_nonempty.schema.json"
+                },
+                "lang": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/lang.schema.json"
+                },
+                "citations": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/citations.schema.json"
+                },
+                "when": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/when.schema.json"
+                }
+            }
+        },
+        "name": {
+            "type": "object",
+            "required": [
+                "toponym",
+                "lang"
+            ],
+            "properties": {
+                "toponym": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string_nonempty.schema.json"
+                },
+                "lang": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/lang.schema.json"
+                },
+                "citations": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/citations.schema.json"
+                },
+                "when": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/when.schema.json"
+                }
+            }
+        }
+    }
+}
