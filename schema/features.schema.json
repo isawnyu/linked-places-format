@@ -1,0 +1,70 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://pleiades.stoa.org/linkedplaces/schema/features.schema.json",
+    "type": "array",
+    "items": {
+        "feature": {
+            "$ref": "#/$defs/feature"
+        }
+    },
+    "$defs": {
+        "feature": {
+            "type": "object",
+            "required": [
+                "@id",
+                "type",
+                "properties"
+            ],
+            "properties": {
+                "@id": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/uri.schema.json"
+                },
+                "type": {
+                    "title": "GeoJSON type = Feature",
+                    "type": "string",
+                    "const": "Feature"
+                },
+                "properties": {
+                    "type": "object",
+                    "required": [
+                        "title"
+                    ],
+                    "properties": {
+                        "title": {
+                            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/string-nonempty.schema.json"
+                        },
+                        "ccodes": {
+                            "$ref": "https://pleiades.stoa.org/linkedplaces/schema/ccodes.schema.json"
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "when": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/when.schema.json"
+                },
+                "names": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/names.schema.json"
+                },
+                "types": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/types.schema.json"
+                },
+                "geometry": {
+                    "$ref": "https://geojson.org/schema/GeometryCollection.json"
+                },
+                "links": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/links.schema.json"
+                },
+                "relations": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/relations.schema.json"
+                },
+                "descriptions": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/descriptions.schema.json"
+                },
+                "depictions": {
+                    "$ref": "https://pleiades.stoa.org/linkedplaces/schema/depictions.schema.json"
+                },
+                "additionalProperties": false
+            }
+        }
+    }
+}
